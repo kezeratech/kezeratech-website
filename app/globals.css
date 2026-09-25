@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Kezera Tech Brand - Light Mode */
+    --background: 210 20% 98%;
+    --foreground: 215 25% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+    --primary: 213 88% 31%; /* #0A3D91 */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 15% 95%;
+    --secondary-foreground: 215 25% 15%;
+    --muted: 210 15% 94%;
+    --muted-foreground: 215 12% 45%;
+    --accent: 191 100% 50%; /* #00C8FF */
+    --accent-foreground: 215 25% 15%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --border: 215 15% 88%;
+    --input: 215 15% 88%;
+    --ring: 213 88% 31%;
+    --radius: 0.5rem;
+    --chart-1: 213 88% 31%;
+    --chart-2: 191 100% 50%;
+    --chart-3: 142 71% 45%;
+    --chart-4: 38 92% 50%;
+    --chart-5: 0 84% 60%;
+  }
+
+  .dark {
+    /* Kezera Tech Brand - Dark Mode */
+    --background: 215 30% 6%;
+    --foreground: 210 20% 95%;
+    --card: 215 28% 9%;
+    --card-foreground: 210 20% 95%;
+    --popover: 215 28% 9%;
+    --popover-foreground: 210 20% 95%;
+    --primary: 213 88% 35%; /* lighter blue for dark bg */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 215 20% 14%;
+    --secondary-foreground: 210 20% 95%;
+    --muted: 215 20% 12%;
+    --muted-foreground: 215 12% 60%;
+    --accent: 191 100% 50%; /* #00C8FF */
+    --accent-foreground: 215 30% 6%;
+    --destructive: 0 63% 40%;
+    --destructive-foreground: 0 0% 98%;
+    --success: 142 71% 40%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 215 30% 6%;
+    --border: 215 20% 16%;
+    --input: 215 20% 16%;
+    --ring: 191 100% 50%;
+    --chart-1: 213 88% 35%;
+    --chart-2: 191 100% 50%;
+    --chart-3: 142 71% 40%;
+    --chart-4: 38 92% 50%;
+    --chart-5: 0 63% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .container-kezera {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  .container-kezera-wide {
+    @apply mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8;
+  }
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  .text-gradient-brand {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+  .glass {
+    @apply bg-background/60 backdrop-blur-xl border border-border/50;
+  }
+  .glass-card {
+    @apply bg-card/50 backdrop-blur-md border border-border/40;
+  }
+  .grid-bg {
+    background-image: linear-gradient(to right, hsl(var(--border) / 0.15) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border) / 0.15) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  .dot-bg {
+    background-image: radial-gradient(hsl(var(--border) / 0.3) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.4);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.6);
+}
+
+/* Focus visible */
+:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background: hsl(var(--accent) / 0.3);
+  color: hsl(var(--foreground));
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
