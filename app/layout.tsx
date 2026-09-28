@@ -59,12 +59,21 @@ export const metadata: Metadata = {
     title: 'Kezera Tech — Designing the Future Through Technology',
     description:
       'Kezera Tech is a technology company focused on building innovative software, digital products, and technology solutions that solve real-world problems.',
+    images: [
+      {
+        url: 'https://kezeratech.com/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'Kezera Tech — Designing the Future Through Technology',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Kezera Tech — Designing the Future Through Technology',
     description:
       'Kezera Tech is a technology company focused on building innovative software, digital products, and technology solutions that solve real-world problems.',
+    images: ['https://kezeratech.com/opengraph-image'],
   },
   robots: {
     index: true,
